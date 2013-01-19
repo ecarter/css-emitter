@@ -5,7 +5,7 @@
 
 ## Installation
 
-    $ component install ecarter/css-callback
+    $ component install ecarter/css-emitter
 
 ## Example
 
