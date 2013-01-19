@@ -1,7 +1,7 @@
 
 # css-emitter
 
-  fire events on css transition and animation completion
+  fire events on css `transition` and `animation` completion
 
 ## Installation
 
@@ -9,37 +9,37 @@
 
 ## Example
 
-    <style type="text/css">
-      #box {
-        transition: all 1s ease;
-        -webkit-transition: all 1s ease;
-        -moz-transition: all 1s ease;
-        -o-transition: all 1s ease;
-        width: 100px;
-        height: 100px;
-        background: black;
-        display: block;
-      }
-      #box.in {
-        width: 200px;
-        height: 200px;
-      }
-    </style>
+Styles:
 
-    <script>
-      var cssEvent = require('css-emitter');
-      var element = document.querySelector('#box');
+    #box {
+      transition: all 1s ease;
+      -webkit-transition: all 1s ease;
+      -moz-transition: all 1s ease;
+      -o-transition: all 1s ease;
+      width: 100px;
+      height: 100px;
+      background: black;
+      display: block;
+    }
+    #box.in {
+      width: 200px;
+      height: 200px;
+    }
 
-      css = cssEvent(element);
+Script:
 
-      css.on('end', function(e){
-        console.log(e);
-      });
+    var cssEvent = require('css-emitter');
+    var element = document.querySelector('#box');
 
-      setTimeout(function(){
-        element.className = 'in';
-      }, 1000);
-    </script>
+    css = cssEvent(element);
+
+    css.on('end', function(e){
+      console.log(e);
+    });
+
+    setTimeout(function(){
+      element.className = 'in';
+    }, 1000);
 
 ## License
 
