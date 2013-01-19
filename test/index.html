@@ -1,0 +1,41 @@
+<!DOCTYPE 5>
+<html>
+  <head>
+    <title>CSS Emitter</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style type="text/css">
+      #box {
+        transition: all 1s ease;
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        width: 100px;
+        height: 100px;
+        background: black;
+        display: block;
+      }
+      #box.in {
+        width: 200px;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box"></div>
+    <script src="../build/build.js"></script>
+    <script>
+      var cssEvent = require('css-emitter');
+      var element = document.querySelector('#box');
+
+      css = cssEvent(element);
+
+      css.on('end', function(e){
+        console.log(e);
+      });
+
+      setTimeout(function(){
+        element.className = 'in';
+      }, 1000);
+    </script>
+  </body>
+</html>
