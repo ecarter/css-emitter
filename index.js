@@ -1,10 +1,8 @@
-
 /**
  * Module Dependencies
  */
 
-var Emitter = require('emitter')
-  , events = require('event');
+var events = require('event');
 
 // CSS events
 
@@ -32,29 +30,31 @@ module.exports = CssEmitter;
 
 function CssEmitter(element){
   if (!(this instanceof CssEmitter)) return new CssEmitter(element);
-  Emitter.call(this);
   this.el = element;
-  this.bind();
 }
-
-/**
- * Inherit from `Emitter.prototype`
- */
-
-CssEmitter.prototype = new Emitter;
 
 /**
  * Bind CSS events.
  *
- * @api private
+ * @api public
  */
 
-CssEmitter.prototype.bind = function(){
-  var self = self || this;
+CssEmitter.prototype.bind = function(fn){
   for (var i=0; i < watch.length; i++) {
-    events.bind(this.el, watch[i], function(e){
-      self.emit('end', e);
-    });
+    events.bind(this.el, watch[i], fn);
   }
 };
+
+/**
+ * Unbind CSS events
+ * 
+ * @api public
+ */
+
+CssEmitter.prototype.unbind = function(fn){
+  for (var i=0; i < watch.length; i++) {
+    events.unbind(this.el, watch[i], fn);
+  }
+};
+
 
