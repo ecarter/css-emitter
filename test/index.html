@@ -29,8 +29,8 @@
 
       css = cssEvent(element);
 
-      css.on('end', function(e){
-        console.log(e);
+      css.bind(function(e){
+        console.log('%s property changed on %s event', e.propertyName, e.type);
       });
 
       setTimeout(function(){
