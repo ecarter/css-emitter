@@ -1,7 +1,7 @@
 
 # css-emitter
 
-  fire events on css `transition` and `animation` completion
+  Bind functions to `transition` and `animation` events.
 
 ## Installation
 
@@ -9,38 +9,54 @@
 
 ## Example
 
-Styles:
+    var cssEvent = require('css-emitter');
+    var el = document.querySelector('#box');
+
+    var animate = cssEvent(el);
+
+    // Bind
+    animate.bind(function(e){
+      console.log('%s property changed on %s event', e.propertyName, e.type);
+    });
+
+    // Change height and width
+    setTimeout(function(){
+      element.className = 'in';
+    }, 1000);
+
+### Example CSS
 
     #box {
+      width: 100px;
+      height: 100px;
       transition: all 1s ease;
       -webkit-transition: all 1s ease;
       -moz-transition: all 1s ease;
       -o-transition: all 1s ease;
-      width: 100px;
-      height: 100px;
       background: black;
       display: block;
     }
+
     #box.in {
       width: 200px;
       height: 200px;
     }
 
-Script:
+## API
 
-    var cssEvent = require('css-emitter');
-    var element = document.querySelector('#box');
+### CssEmitter(target:Element)
 
-    css = cssEvent(element);
+Initialize an `CssEmitter` with given `target` element.
 
-    css.on('end', function(e){
-      console.log(e);
-    });
+### CssEmitter.bind(fn:Function)
 
-    setTimeout(function(){
-      element.className = 'in';
-    }, 1000);
+Register bind function.
+
+### CssEmitter.unbind([fn]:Function)
+
+Unregister bind function.
 
 ## License
 
   MIT
+
