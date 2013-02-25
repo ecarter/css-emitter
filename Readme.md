@@ -9,10 +9,10 @@
 
 ## Example
 
-    var cssEvent = require('css-emitter');
+    var css = require('css-emitter');
     var el = document.querySelector('#box');
 
-    var animate = cssEvent(el);
+    var animate = css(el);
 
     // Bind
     animate.bind(function(e){
@@ -21,7 +21,7 @@
 
     // Change height and width
     setTimeout(function(){
-      element.className = 'in';
+      el.className = 'in';
     }, 1000);
 
 ### Example CSS
