@@ -1,4 +1,3 @@
-
 # css-emitter
 
   Bind functions to `transition` and `animation` events.
@@ -55,6 +54,10 @@ Register bind function.
 ### CssEmitter.unbind([fn]:Function)
 
 Unregister bind function.
+
+### CssEmitter.once(fn:Function)
+
+Register a function that will fire once then unbind automatically
 
 ## License
 
