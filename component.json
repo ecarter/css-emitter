@@ -1,8 +1,8 @@
 {
   "name": "css-emitter",
-  "repo": "ecarter/css-emitter",
+  "repo": "anthonyshort/css-emitter",
   "description": "fire events on css transition and animation completion",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "keywords": ["css", "emitter", "events", "transition", "animation"],
   "dependencies": {
     "component/emitter": "*",
