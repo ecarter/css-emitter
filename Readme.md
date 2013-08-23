@@ -4,7 +4,7 @@
 
 ## Installation
 
-    $ component install ecarter/css-emitter
+    $ component install anthonyshort/css-emitter
 
 ## Example
 
