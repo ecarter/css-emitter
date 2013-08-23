@@ -1,0 +1,31 @@
+{
+  "name": "css-emitter-component",
+  "version": "0.1.1",
+  "description": "fire events on css transition and animation completion",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anthonyshort/css-emitter.git"
+  },
+  "keywords": [
+    "component",
+    "css",
+    "browserify"
+  ],
+  "author": "Anthony Short",
+  "license": "BSD",
+  "readmeFilename": "Readme.md",
+  "gitHead": "46dd02ee19f68e027d48952f161e1035fbe3ae50",
+  "browser": {
+    "event": "event-component"
+  },
+  "dependencies": {
+    "event-component": "~0.1.0"
+  }
+}
