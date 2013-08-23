@@ -5,6 +5,10 @@
 ## Installation
 
     $ component install anthonyshort/css-emitter
+  
+or via npm for Browserify
+
+    $ npm install css-emitter-component
 
 ## Example
 
