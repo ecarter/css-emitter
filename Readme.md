@@ -1,11 +1,14 @@
-
 # css-emitter
 
   Bind functions to `transition` and `animation` events.
 
 ## Installation
 
-    $ component install ecarter/css-emitter
+    $ component install anthonyshort/css-emitter
+  
+or via npm for Browserify
+
+    $ npm install css-emitter-component
 
 ## Example
 
@@ -55,6 +58,10 @@ Register bind function.
 ### CssEmitter.unbind([fn]:Function)
 
 Unregister bind function.
+
+### CssEmitter.once(fn:Function)
+
+Register a function that will fire once then unbind automatically
 
 ## License
 
